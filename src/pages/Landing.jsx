@@ -5,6 +5,7 @@ import { GiKenya } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import resume from "../assets/cliffe_ibande_CV.pdf";
 
 const combinedVariants = {
   hidden: {
@@ -125,8 +126,8 @@ export default function Landing() {
         </motion.div>
 
         <motion.a
-          href="../assets/cliffe _bande_CV.pdf"
-          download
+          href={resume}
+          download='Resume'
           variants={buttonVariants}
           initial="initial"
           whileHover="hover"
