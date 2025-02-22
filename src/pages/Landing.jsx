@@ -5,7 +5,7 @@ import { GiKenya } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import resume from "../assets/cliffe ibande CV0.pdf";
+import resume from "../assets/cliffe ibande CV1.pdf";
 
 const combinedVariants = {
   hidden: {
