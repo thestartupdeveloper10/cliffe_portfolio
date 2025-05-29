@@ -11,6 +11,7 @@ import { skillsData } from "@/assets/skilldata";
 import HeroIMG from "@/assets/imgs/hero.png"
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import TiltedCard from "@/components/TiltedCard";
 
 export default function About() {
   return (
@@ -56,14 +57,25 @@ export default function About() {
             <CardTitle>About Me</CardTitle>
             <CardDescription>Full-stack Developer & ML Engineer</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col items-center justify-center md:items-start">
-            <motion.img
-            whileHover={{ scale: 1.1,boxShadow: "0px 0px 20px 2px rgba(0, 0, 0, 0.2)" }}
-            transition={{ duration: 0.3}}
-              className="h-32 w-32 rounded-full bg-slate-200  object-cover border-4 border-gray-200 dark:border-gray-400 border-spacing-2"
-              src={HeroIMG}
-              alt=""
-            />
+          <CardContent className="flex flex-col items-center justify-center md:py-10">
+           <TiltedCard
+                    imageSrc={HeroIMG}
+                    altText="Cliffe ibande"
+                    captionText="Cliffe ibande -"
+                    containerHeight="300px"
+                    containerWidth="300px"
+                    imageHeight="300px"
+                    imageWidth="300px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.2}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={true}
+                    overlayContent={
+                      <p className="tilted-card-demo-text">
+                        Cliffe ibande -
+                      </p>
+                    }/>
           </CardContent>
           <CardContent>
             <p className="text-gray-600 text-center md:text-start">

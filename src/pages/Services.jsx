@@ -4,6 +4,7 @@ import { CgWebsite } from "react-icons/cg";
 import { CiMobile3 } from "react-icons/ci";
 import { motion } from "framer-motion";
 
+
 const services = [
   {
     id: 1,
@@ -59,6 +60,7 @@ export default function Services() {
     Leveraging cutting-edge technologies to deliver comprehensive solutions across web, mobile, and data science domains.
   </p>
 </motion.div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((service) => (
           <ServiceCard

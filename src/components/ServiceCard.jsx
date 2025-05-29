@@ -6,8 +6,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-
+// import { ArrowRight } from "lucide-react";
+import SpotlightCard from "@/components/SpotlightCard";
 const cardVariants = {
   hidden: { 
     opacity: 0,
@@ -41,8 +41,12 @@ const iconVariants = {
 
 export default function ServiceCard({ title, description, icon }) {
   return (
+    
+<SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
     <motion.div
       variants={cardVariants}
+      className=" z-50"
+
     >
       <Card className="group hover:shadow-lg transition-shadow duration-300">
         <CardHeader>
@@ -71,5 +75,6 @@ export default function ServiceCard({ title, description, icon }) {
         </CardFooter>
       </Card>
     </motion.div>
+    </SpotlightCard>
   );
 }

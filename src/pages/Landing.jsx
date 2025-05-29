@@ -6,6 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import resume from "../assets/cliffe ibande CV1.pdf";
+import ShinyText from "@/components/ShinyText";
 
 const combinedVariants = {
   hidden: {
@@ -121,8 +122,8 @@ export default function Landing() {
         </motion.h1>
 
         <motion.div className="flex-col lg:flex-row flex gap-2 items-center text-gray-600 dark:text-gray-400">
-          <h3>Full-stack Web and Mobile Developer </h3>
-          <h3>• ML Engineer</h3>
+        <ShinyText text="Full-stack Web and Mobile Developer" disabled={false} speed={3} className='custom-class' />
+        <ShinyText text="• ML Engineer" disabled={false} speed={3} className='custom-class' />
         </motion.div>
 
         <motion.a

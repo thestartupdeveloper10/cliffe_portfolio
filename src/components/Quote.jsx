@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
 import { motion, AnimatePresence } from 'framer-motion';
+import Orb from './Orb';
 
 const containerVariants = {
   hidden: {
@@ -94,7 +95,16 @@ export default function Quote() {
   };
 
   return (
-    <div className="flex items-center justify-center flex-col gap-8 text-center min-h-screen px-6 py-20 ">
+    <div className="relative flex items-center justify-center flex-col gap-8 text-center min-h-screen px-6 py-20 ">
+        <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
+            <Orb
+              hoverIntensity={0.5}
+              rotateOnHover={true}
+              hue={0}
+              forceHoverState={false}
+            />
+            </div>
+      
       <motion.div
       initial={{ scale: 0 }}
       whileInView={{scale: 1, transition: { duration: 0.6, ease: "easeOut" } }}
