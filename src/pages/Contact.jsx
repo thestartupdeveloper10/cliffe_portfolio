@@ -11,24 +11,75 @@ import emailjs from '@emailjs/browser';
 export default function Contact() {
   const form = useRef();
   const [notification, setNotification] = useState({ show: false, success: false });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = (formData) => {
+    const newErrors = {};
+    
+    // First Name validation
+    if (!formData.get('first_name').trim()) {
+      newErrors.first_name = 'First name is required';
+    }
+
+    // Last Name validation
+    if (!formData.get('last_name').trim()) {
+      newErrors.last_name = 'Last name is required';
+    }
+
+    // Email validation
+    const email = formData.get('user_email').trim();
+    if (!email) {
+      newErrors.user_email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      newErrors.user_email = 'Invalid email address';
+    }
+
+    // Subject validation
+    if (!formData.get('subject').trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+
+    // Message validation
+    if (!formData.get('message').trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.get('message').trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+    }
+
+    return newErrors;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrors({});
+
+    const formData = new FormData(e.target);
+    const validationErrors = validateForm(formData);
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setIsSubmitting(false);
+      return;
+    }
+
     emailjs.sendForm(
       import.meta.env.VITE_SERVICE_ID,
       import.meta.env.VITE_TEMPLATE_ID,
       form.current,
       import.meta.env.VITE_USER_ID
     )
-      .then((result) => {
-        console.log('Email sent successfully!');
+      .then(() => {
         setNotification({ show: true, success: true });
         e.target.reset();
+        setIsSubmitting(false);
         // Hide notification after 5 seconds
         setTimeout(() => setNotification({ show: false, success: true }), 5000);
       }, (error) => {
-        console.log('Failed to send email:', error.text);
+        console.error('Failed to send email:', error.text);
         setNotification({ show: true, success: false });
+        setIsSubmitting(false);
         setTimeout(() => setNotification({ show: false, success: false }), 5000);
       });
   };
@@ -40,7 +91,7 @@ export default function Contact() {
           Get in Touch
         </h2>
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-          Let's collaborate on bringing your next project to life.
+          Let&apos;s collaborate on bringing your next project to life.
         </p>
       </div>
 
@@ -70,27 +121,60 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
             </CardHeader>
             <CardContent>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" name="first_name" placeholder="John" />
+                    <Input 
+                      id="firstName" 
+                      name="first_name" 
+                      placeholder="John"
+                      className={errors.first_name ? 'border-red-500' : ''} 
+                    />
+                    {errors.first_name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.first_name}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" name="last_name" placeholder="Doe" />
+                    <Input 
+                      id="lastName" 
+                      name="last_name" 
+                      placeholder="Doe"
+                      className={errors.last_name ? 'border-red-500' : ''} 
+                    />
+                    {errors.last_name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.last_name}</p>
+                    )}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="user_email" type="email" placeholder="john@example.com" />
+                  <Input 
+                    id="email" 
+                    name="user_email" 
+                    type="email" 
+                    placeholder="john@example.com"
+                    className={errors.user_email ? 'border-red-500' : ''} 
+                  />
+                  {errors.user_email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.user_email}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" name="subject" placeholder="Project Inquiry" />
+                  <Input 
+                    id="subject" 
+                    name="subject" 
+                    placeholder="Project Inquiry"
+                    className={errors.subject ? 'border-red-500' : ''} 
+                  />
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
@@ -98,12 +182,15 @@ export default function Contact() {
                     id="message"
                     name="message"
                     placeholder="Tell me about your project..."
-                    className="min-h-[150px]"
+                    className={`min-h-[150px] ${errors.message ? 'border-red-500' : ''}`}
                   />
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  )}
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>

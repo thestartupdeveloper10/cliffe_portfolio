@@ -1,5 +1,6 @@
 // src/data/projectData.js
 import osasuna1 from "@/assets/imgs/Osasuna/7.jpg";
+import theboard from "@/assets/imgs/TheBoard/1.png";
 
 const projectData = [
   {
@@ -69,6 +70,20 @@ const projectData = [
       gallery: [
         "https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_1280.jpg",
         "https://cdn.pixabay.com/photo/2016/11/29/06/16/kindle-1867751_1280.jpg",
+      ]
+    }
+  },
+  {
+    id: "TheBoardFC",
+    title: "The Board FC",
+    description: "The Osasuna FC website is a dynamic web app showcasing the renowned football club, Osasuna, and delivering real-time updates to fans.",
+    techStack: ["React", "Supabase", "Tailwind CSS","Tanstack Query", "Redux"],
+    liveLink: "https://theboardfc-uiff8.kinsta.page/team",
+    category: "Sports",
+    images: {
+      gallery: [
+        theboard,
+        'https://cdn.pixabay.com/photo/2016/06/15/01/11/soccer-1458766_1280.jpg'
       ]
     }
   }

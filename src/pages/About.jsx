@@ -1,4 +1,4 @@
-import SkillCard from "@/components/SkillCard";
+import GlassIcons from "@/components/GlassIcons";
 import {
   Card,
   CardContent,
@@ -14,6 +14,25 @@ import { motion } from "framer-motion";
 import TiltedCard from "@/components/TiltedCard";
 
 export default function About() {
+  // Transform skill data for GlassIcons format
+  const webDevIcons = skillsData.webDevelopment.skills.map(skill => ({
+    icon: <skill.icon className="w-6 h-6 text-white" />,
+    label: skill.name,
+    color: "blue",
+  }));
+
+  const mobileDevIcons = skillsData.mobileDevelopment.skills.map(skill => ({
+    icon: <skill.icon className="w-6 h-6 text-white" />,
+    label: skill.name,
+    color: "purple",
+  }));
+
+  const mlIcons = skillsData.machineLearning.skills.map(skill => ({
+    icon: <skill.icon className="w-6 h-6 text-white" />,
+    label: skill.name,
+    color: "indigo",
+  }));
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-7 gap-6 p-4 pt-10 md:pt-20 px-4 md:px-16" id="about">
       <motion.div
@@ -27,23 +46,27 @@ export default function About() {
             <CardTitle className="text-2xl font-bold">Technical Skills</CardTitle>
             <CardDescription>Comprehensive overview of my technical expertise</CardDescription>
           </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <SkillCard 
-              title={skillsData.webDevelopment.title}
-              description={skillsData.webDevelopment.description}
-              skills={skillsData.webDevelopment.skills}
-            />
-            <SkillCard 
-              title={skillsData.mobileDevelopment.title}
-              description={skillsData.mobileDevelopment.description}
-              skills={skillsData.mobileDevelopment.skills}
-            />
-            <SkillCard 
-              className="md:col-span-2"
-              title={skillsData.machineLearning.title}
-              description={skillsData.machineLearning.description}
-              skills={skillsData.machineLearning.skills}
-            />
+          <CardContent className="space-y-8">
+            {/* Web Development Skills */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">{skillsData.webDevelopment.title}</h3>
+              <p className="text-sm text-gray-500 mb-6">{skillsData.webDevelopment.description}</p>
+              <GlassIcons items={webDevIcons} className="gap-4" />
+            </div>
+
+            {/* Mobile Development Skills */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">{skillsData.mobileDevelopment.title}</h3>
+              <p className="text-sm text-gray-500 mb-6">{skillsData.mobileDevelopment.description}</p>
+              <GlassIcons items={mobileDevIcons} className="gap-4" />
+            </div>
+
+            {/* Machine Learning Skills */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">{skillsData.machineLearning.title}</h3>
+              <p className="text-sm text-gray-500 mb-6">{skillsData.machineLearning.description}</p>
+              <GlassIcons items={mlIcons} className="gap-4" />
+            </div>
           </CardContent>
         </Card>
       </motion.div>
