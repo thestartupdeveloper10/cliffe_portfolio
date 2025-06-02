@@ -48,10 +48,13 @@ export default function About() {
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Web Development Skills */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">{skillsData.webDevelopment.title}</h3>
+            <div >
+              <h3 className="text-start text-lg font-semibold mb-4">{skillsData.webDevelopment.title}</h3>
               <p className="text-sm text-gray-500 mb-6">{skillsData.webDevelopment.description}</p>
+              <div className="flex flex-col items-start justify-center">
               <GlassIcons items={webDevIcons} className="gap-4" />
+              </div>
+             
             </div>
 
             {/* Mobile Development Skills */}
