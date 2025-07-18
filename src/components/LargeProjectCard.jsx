@@ -11,12 +11,12 @@ import {
   
   export default function LargeProjectCard({ project }) {
     return (
-      <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+      <Card className="h-full transition-shadow duration-300 hover:shadow-lg">
         <CardHeader>
-          <div className="flex justify-between items-start">
+          <div className="flex items-start justify-between">
             <div>
               <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-              <CardDescription className="text-sm mt-2">
+              <CardDescription className="mt-2 text-sm">
                 {project.category}
               </CardDescription>
             </div>
@@ -28,11 +28,11 @@ import {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {project.images.gallery.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-lg">
+              <div key={index} className="overflow-hidden rounded-lg aspect-square">
                 <img 
-                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" 
+                  className="object-contain w-full h-full transition-transform duration-300 hover:scale-105" 
                   src={image} 
                   alt={`${project.title} - Image ${index + 1}`}
                 />

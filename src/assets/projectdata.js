@@ -1,6 +1,12 @@
 // src/data/projectData.js
 import osasuna1 from "@/assets/imgs/Osasuna/7.jpg";
 import theboard from "@/assets/imgs/TheBoard/1.png";
+import label1 from "@/assets/imgs/label/1.png";
+import label2 from "@/assets/imgs/label/2.png";
+import picha1 from "@/assets/imgs/picha/1.png";
+import picha2 from "@/assets/imgs/picha/2.png";
+import royal1 from "@/assets/imgs/royalWatches/1.png";
+
 
 const projectData = [
   {
@@ -12,8 +18,8 @@ const projectData = [
     category: "Fashion E-commerce",
     images: {
       gallery: [
-        'https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg',
-        'https://cdn.pixabay.com/photo/2017/08/01/11/48/woman-2564660_1280.jpg',
+        label1,
+        label2,
       ]
     }
   },
@@ -26,8 +32,7 @@ const projectData = [
     category: "E-commerce",
     images: {
       gallery: [
-        'https://cdn.pixabay.com/photo/2018/01/18/19/06/time-3091031_1280.jpg',
-        'https://cdn.pixabay.com/photo/2013/07/11/15/30/male-watch-144648_1280.jpg',
+        royal1
       ]
     }
   },
@@ -46,16 +51,16 @@ const projectData = [
     }
   },
   {
-    id: "shutterspot",
-    title: "ShutterSpot",
-    description: "Shutterspot is a cutting-edge application designed for booking photographers, providing users with a seamless and intuitive platform to connect with talented professionals.",
+    id: "pichakonnect",
+    title: "PichaConnect",
+    description: "PichaConnect is a cutting-edge application designed for booking photographers, providing users with a seamless and intuitive platform to connect with talented professionals.",
     techStack: ["React", "Vite", "MongoDB", "Redux Toolkit", "Framer Motion"],
     liveLink: "#",
     category: "Service Booking",
     images: {
       gallery: [
-        "https://cdn.pixabay.com/photo/2016/11/29/04/54/photographer-1867417_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/10/28/07/04/men-1777352_1280.jpg"
+        picha1,
+        picha2,
       ]
     }
   },
@@ -76,9 +81,9 @@ const projectData = [
   {
     id: "TheBoardFC",
     title: "The Board FC",
-    description: "The Osasuna FC website is a dynamic web app showcasing the renowned football club, Osasuna, and delivering real-time updates to fans.",
+    description: "The Board FC website is a modern football club web app featuring built-in email notifications, an elegant UI, merchandise sales, and all the core functionalities expected from a standard football web app. Fans can stay updated with real-time news, explore club information, and enjoy a seamless user experience.",
     techStack: ["React", "Supabase", "Tailwind CSS","Tanstack Query", "Redux"],
-    liveLink: "https://theboardfc-uiff8.kinsta.page/team",
+    liveLink: "https://theboardfc-uiff8.kinsta.page",
     category: "Sports",
     images: {
       gallery: [

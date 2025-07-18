@@ -34,7 +34,7 @@ export default function About() {
   }));
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-7 gap-6 p-4 pt-10 md:pt-20 px-4 md:px-16" id="about">
+    <div className="grid grid-cols-1 gap-6 p-4 px-4 pt-10 md:grid-cols-7 md:pt-20 md:px-16" id="about">
       <motion.div
       
       // initial={{ opacity: 0, y: 80 }}
@@ -49,8 +49,8 @@ export default function About() {
           <CardContent className="space-y-8">
             {/* Web Development Skills */}
             <div >
-              <h3 className="text-start text-lg font-semibold mb-4">{skillsData.webDevelopment.title}</h3>
-              <p className="text-sm text-gray-500 mb-6">{skillsData.webDevelopment.description}</p>
+              <h3 className="mb-4 text-lg font-semibold text-start">{skillsData.webDevelopment.title}</h3>
+              <p className="mb-6 text-sm text-gray-500">{skillsData.webDevelopment.description}</p>
               <div className="flex flex-col items-start justify-center">
               <GlassIcons items={webDevIcons} className="gap-4" />
               </div>
@@ -59,15 +59,15 @@ export default function About() {
 
             {/* Mobile Development Skills */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">{skillsData.mobileDevelopment.title}</h3>
-              <p className="text-sm text-gray-500 mb-6">{skillsData.mobileDevelopment.description}</p>
+              <h3 className="mb-4 text-lg font-semibold">{skillsData.mobileDevelopment.title}</h3>
+              <p className="mb-6 text-sm text-gray-500">{skillsData.mobileDevelopment.description}</p>
               <GlassIcons items={mobileDevIcons} className="gap-4" />
             </div>
 
             {/* Machine Learning Skills */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">{skillsData.machineLearning.title}</h3>
-              <p className="text-sm text-gray-500 mb-6">{skillsData.machineLearning.description}</p>
+              <h3 className="mb-4 text-lg font-semibold">{skillsData.machineLearning.title}</h3>
+              <p className="mb-6 text-sm text-gray-500">{skillsData.machineLearning.description}</p>
               <GlassIcons items={mlIcons} className="gap-4" />
             </div>
           </CardContent>
@@ -77,7 +77,7 @@ export default function About() {
       // initial={{ opacity: 0, x:100 }}
       // whileInView={{ opacity: 1, x: 0 , transition: { duration: 0.6, ease: "easeOut" } }}
       // viewport={{ once: true }}
-      className="md:col-span-3 md:-ml-10 md:mb-10 z-10">
+      className="z-10 md:col-span-3 md:-ml-10 md:mb-10">
         <Card className="h-full">
           <CardHeader>
             <CardTitle>About Me</CardTitle>
@@ -104,7 +104,7 @@ export default function About() {
                     }/>
           </CardContent>
           <CardContent>
-            <p className="text-gray-600 text-center md:text-start">
+            <p className="text-center text-gray-600 md:text-start">
               A passionate developer with expertise in full-stack development and machine learning.
               Committed to creating efficient, scalable solutions across web, mobile, and AI domains.
             </p>
@@ -112,7 +112,7 @@ export default function About() {
           <CardHeader>
           <CardTitle>Hobbies</CardTitle>
           </CardHeader>
-          <CardFooter className="grid grid-cols-2 md:flex flex-row gap-2">
+          <CardFooter className="grid flex-row grid-cols-2 gap-2 md:flex">
             <Badge variant="secondary">
               <span className="font-semibold">Coding</span>
             </Badge>

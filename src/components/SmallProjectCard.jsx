@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function SmallProjectCard({ project }) {
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+    <Card className="h-full transition-shadow duration-300 hover:shadow-lg">
       <CardHeader>
         <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
         <CardDescription className="text-sm">
@@ -20,9 +20,9 @@ export default function SmallProjectCard({ project }) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="aspect-video rounded-lg overflow-hidden mb-4">
+        <div className="mb-4 overflow-hidden rounded-lg aspect-video">
           <img 
-            className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" 
+            className="object-contain w-full h-full transition-transform duration-300 hover:scale-105" 
             src={project.images.gallery[0]} 
             alt={project.title}
           />
