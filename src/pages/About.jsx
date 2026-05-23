@@ -1,133 +1,156 @@
-import GlassIcons from "@/components/GlassIcons";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { skillsData } from "@/assets/skilldata";
-import HeroIMG from "@/assets/imgs/hero.png"
-import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import TiltedCard from "@/components/TiltedCard";
+import HeroIMG from "@/assets/imgs/hero.png";
+
+const highlights = [
+  { label: "Role", value: "Associate Software Engineer @ Prodapt Ltd", color: "#88b5a1" },
+  { label: "Education", value: "BSc Software Engineering — Kisii University", color: "#a4bcd1" },
+  { label: "Location", value: "Nairobi, Kenya", color: "#74bba4" },
+  { label: "Focus", value: "DevOps · Full-Stack · AI/ML", color: "#a4bcd1" },
+];
+
+const interests = ["Football ⚽", "Travelling ✈️", "Reading 📚", "Open Source 🚀", "Fintech 💳"];
 
 export default function About() {
-  // Transform skill data for GlassIcons format
-  const webDevIcons = skillsData.webDevelopment.skills.map(skill => ({
-    icon: <skill.icon className="w-6 h-6 text-white" />,
-    label: skill.name,
-    color: "blue",
-  }));
-
-  const mobileDevIcons = skillsData.mobileDevelopment.skills.map(skill => ({
-    icon: <skill.icon className="w-6 h-6 text-white" />,
-    label: skill.name,
-    color: "purple",
-  }));
-
-  const mlIcons = skillsData.machineLearning.skills.map(skill => ({
-    icon: <skill.icon className="w-6 h-6 text-white" />,
-    label: skill.name,
-    color: "indigo",
-  }));
-
   return (
-    <div className="grid grid-cols-1 gap-6 p-4 px-4 pt-10 md:grid-cols-7 md:pt-20 md:px-16" id="about">
-      <motion.div
-      
-      // initial={{ opacity: 0, y: 80 }}
-      // whileInView={{ opacity: 1, y: 0 , transition: { duration: 0.6, ease: "easeOut" } }}
-      // viewport={{ once: true }}
-      className="md:col-span-4 md:-mt-14">
-        <Card className="h-full">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold">Technical Skills</CardTitle>
-            <CardDescription>Comprehensive overview of my technical expertise</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-8">
-            {/* Web Development Skills */}
-            <div >
-              <h3 className="mb-4 text-lg font-semibold text-start">{skillsData.webDevelopment.title}</h3>
-              <p className="mb-6 text-sm text-gray-500">{skillsData.webDevelopment.description}</p>
-              <div className="flex flex-col items-start justify-center">
-              <GlassIcons items={webDevIcons} className="gap-4" />
-              </div>
-             
-            </div>
+    <section id="about" className="py-24 overflow-hidden relative" style={{ background: "var(--bg-page-alt)" }}>
+      {/* Orbs */}
+      <div
+        className="gradient-orb w-[400px] h-[400px] top-[-80px] right-[0%]"
+        style={{ background: "rgba(164,188,209,0.05)" }}
+      />
+      <div
+        className="gradient-orb w-[300px] h-[300px] bottom-[-60px] left-[5%]"
+        style={{ background: "rgba(136,181,161,0.04)" }}
+      />
 
-            {/* Mobile Development Skills */}
-            <div>
-              <h3 className="mb-4 text-lg font-semibold">{skillsData.mobileDevelopment.title}</h3>
-              <p className="mb-6 text-sm text-gray-500">{skillsData.mobileDevelopment.description}</p>
-              <GlassIcons items={mobileDevIcons} className="gap-4" />
-            </div>
+      <div className="relative z-10 max-w-6xl mx-auto section-padding">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14"
+        >
+          <span className="section-label">Who I Am</span>
+          <h2
+            className="mt-2 text-4xl sm:text-5xl font-bold text-foreground leading-tight tracking-tight"
+            style={{ fontFamily: "Syne, sans-serif" }}
+          >
+            About{" "}
+            <span className="ember-text">Me</span>
+          </h2>
+        </motion.div>
 
-            {/* Machine Learning Skills */}
-            <div>
-              <h3 className="mb-4 text-lg font-semibold">{skillsData.machineLearning.title}</h3>
-              <p className="mb-6 text-sm text-gray-500">{skillsData.machineLearning.description}</p>
-              <GlassIcons items={mlIcons} className="gap-4" />
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
-      <motion.div 
-      // initial={{ opacity: 0, x:100 }}
-      // whileInView={{ opacity: 1, x: 0 , transition: { duration: 0.6, ease: "easeOut" } }}
-      // viewport={{ once: true }}
-      className="z-10 md:col-span-3 md:-ml-10 md:mb-10">
-        <Card className="h-full">
-          <CardHeader>
-            <CardTitle>About Me</CardTitle>
-            <CardDescription>Full-stack Developer & ML Engineer</CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center justify-center md:py-10">
-           <TiltedCard
-                    imageSrc={HeroIMG}
-                    altText="Cliffe ibande"
-                    captionText="Cliffe ibande -"
-                    containerHeight="300px"
-                    containerWidth="300px"
-                    imageHeight="300px"
-                    imageWidth="300px"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.2}
-                    showMobileWarning={false}
-                    showTooltip={true}
-                    displayOverlayContent={true}
-                    overlayContent={
-                      <p className="tilted-card-demo-text">
-                        Cliffe ibande -
-                      </p>
-                    }/>
-          </CardContent>
-          <CardContent>
-            <p className="text-center text-gray-600 md:text-start">
-              A passionate developer with expertise in full-stack development and machine learning.
-              Committed to creating efficient, scalable solutions across web, mobile, and AI domains.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Left — text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-6"
+          >
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              I&apos;m a results-driven engineer with a BSc in Software Engineering and hands-on
+              experience spanning DevOps, full-stack development, and AI/ML. Currently I support{" "}
+              <span style={{ color: "#88b5a1" }} className="font-medium">
+                M-Pesa operations across 5 African nations
+              </span>{" "}
+              at Prodapt Ltd, ensuring reliability of platforms that process over 1 million daily
+              transactions.
             </p>
-          </CardContent>
-          <CardHeader>
-          <CardTitle>Hobbies</CardTitle>
-          </CardHeader>
-          <CardFooter className="grid flex-row grid-cols-2 gap-2 md:flex">
-            <Badge variant="secondary">
-              <span className="font-semibold">Coding</span>
-            </Badge>
-            <Badge variant="secondary">
-              <span className="font-semibold">Travelling</span>
-            </Badge>
-            <Badge variant="secondary">
-              <span className="font-semibold">Football</span>
-            </Badge>
-            <Badge variant="secondary">
-              <span className="font-semibold">Reading</span>
-            </Badge>
-          </CardFooter>
-        </Card>
-      </motion.div>
-    </div>
+            <p className="text-muted-foreground text-base leading-relaxed">
+              I&apos;m passionate about building scalable systems — from microservice deployments
+              orchestrated with Kubernetes and Terraform, to RAG pipelines powered by Hugging Face
+              Transformers. I thrive at the intersection of infrastructure and application code.
+            </p>
+
+            {/* Key details */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              {highlights.map((h) => (
+                <div
+                  key={h.label}
+                  className="flex items-start gap-3 p-3 rounded-xl border"
+                  style={{ background: "var(--bg-card)", borderColor: "rgba(136,181,161,0.1)" }}
+                >
+                  <div
+                    className="w-1.5 h-1.5 rounded-full shrink-0 mt-2"
+                    style={{ background: h.color }}
+                  />
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide terminal-text">
+                      {h.label}
+                    </p>
+                    <p className="text-sm font-medium mt-0.5 text-foreground">
+                      {h.value}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Interests */}
+            <div className="pt-1">
+              <p className="section-label mb-3">Interests</p>
+              <div className="flex flex-wrap gap-2">
+                {interests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="px-3 py-1.5 text-sm rounded-full border transition-all duration-200 hover:border-[rgba(136,181,161,0.4)] text-muted-foreground"
+                    style={{
+                      background: "rgba(136,181,161,0.04)",
+                      borderColor: "rgba(136,181,161,0.15)",
+                    }}
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right — photo */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="flex justify-center"
+          >
+            <div className="relative">
+              {/* Ember glow ring */}
+              <div
+                className="absolute inset-[-20px] rounded-3xl border pointer-events-none"
+                style={{ borderColor: "rgba(136,181,161,0.15)" }}
+              />
+              {/* Violet glow corner accent */}
+              <div
+                className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full pointer-events-none"
+                style={{
+                  background: "rgba(164,188,209,0.25)",
+                  filter: "blur(30px)",
+                }}
+              />
+              <TiltedCard
+                imageSrc={HeroIMG}
+                altText="Cliffe Owino Ibande"
+                captionText="Cliffe Owino Ibande"
+                containerHeight="380px"
+                containerWidth="300px"
+                imageHeight="380px"
+                imageWidth="300px"
+                rotateAmplitude={10}
+                scaleOnHover={1.04}
+                showMobileWarning={false}
+                showTooltip={false}
+                displayOverlayContent={false}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }

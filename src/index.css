@@ -3,59 +3,81 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Light mode (default) ─────────────────────────────────── */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --background: 151 46% 97%;
+    --foreground: 152 14% 16%;
+    --card: 151 30% 90%;
+    --card-foreground: 152 14% 16%;
+    --popover: 151 30% 90%;
+    --popover-foreground: 152 14% 16%;
+    --primary: 153 23% 62%;
+    --primary-foreground: 152 14% 16%;
+    --secondary: 151 25% 85%;
+    --secondary-foreground: 152 14% 16%;
+    --muted: 151 20% 84%;
+    --muted-foreground: 152 8% 42%;
+    --accent: 208 33% 73%;
+    --accent-foreground: 152 14% 16%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 151 46% 97%;
+    --border: 151 20% 80%;
+    --input: 151 20% 84%;
+    --ring: 153 23% 62%;
+    --radius: 0.75rem;
+
+    /* ── Custom semantic vars ── */
+    --bg-page: #f2faf6;
+    --bg-page-alt: #e4f5ed;
+    --bg-card: #d2ebe1;
+    --bg-card-hover: #c4e2d8;
+    --bg-card-elevated: #d8eee4;
+    --bg-terminal: #e0f0e8;
+    --text-primary: #243530;
+    --text-secondary: #4a6858;
+    --nav-bg: rgba(242, 250, 246, 0.92);
+    --nav-bg-mobile: rgba(242, 250, 246, 0.98);
+    --stats-bg: rgba(228, 245, 237, 0.85);
+    --graph-edge: #92b8a8;
+    --film-grain-opacity: 0.08;
   }
 
+  /* ── Dark mode ────────────────────────────────────────────── */
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 152 33% 8%;
+    --foreground: 199 100% 93%;
+    --card: 152 22% 10%;
+    --card-foreground: 199 100% 93%;
+    --popover: 152 22% 10%;
+    --popover-foreground: 199 100% 93%;
+    --primary: 153 23% 62%;
+    --primary-foreground: 152 33% 6%;
+    --secondary: 152 20% 13%;
+    --secondary-foreground: 199 100% 93%;
+    --muted: 152 18% 13%;
+    --muted-foreground: 160 12% 54%;
+    --accent: 208 33% 73%;
+    --accent-foreground: 199 100% 93%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 199 100% 93%;
+    --border: 152 18% 16%;
+    --input: 152 18% 13%;
+    --ring: 153 23% 62%;
+
+    /* ── Custom semantic vars ── */
+    --bg-page: #0d1a14;
+    --bg-page-alt: #122018;
+    --bg-card: #192b20;
+    --bg-card-hover: #1f3328;
+    --bg-card-elevated: #1c2f24;
+    --bg-terminal: #080f0c;
+    --text-primary: #dcf4ff;
+    --text-secondary: #a4bcd1;
+    --nav-bg: rgba(13, 26, 20, 0.92);
+    --nav-bg-mobile: rgba(13, 26, 20, 0.98);
+    --stats-bg: rgba(25, 43, 32, 0.75);
+    --graph-edge: #28423a;
+    --film-grain-opacity: 0.32;
   }
 }
 
@@ -63,7 +85,180 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', system-ui, sans-serif;
+  }
+}
+
+/* Subtle film grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: var(--film-grain-opacity);
+  transition: opacity 0.3s ease;
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-5 md:px-12 lg:px-20;
+  }
+
+  .terminal-text {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .ember-text {
+    background: linear-gradient(135deg, #88b5a1 0%, #a6cbbf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ember-violet-text {
+    background: linear-gradient(135deg, #88b5a1 0%, #a4bcd1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .spark-text {
+    background: linear-gradient(135deg, #dcf4ff 0%, #a4bcd1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .obsidian-card {
+    @apply rounded-2xl border transition-all duration-300;
+    background: var(--bg-card);
+    border-color: rgba(136, 181, 161, 0.12);
+  }
+
+  .obsidian-card:hover {
+    border-color: rgba(136, 181, 161, 0.32);
+    background: var(--bg-card-hover);
+  }
+
+  .ember-btn {
+    @apply bg-[#88b5a1] hover:bg-[#a6cbbf] text-[#0d1a14] font-semibold px-6 py-3 rounded-xl
+      transition-all duration-200 inline-flex items-center gap-2;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .ghost-ember-btn {
+    @apply font-medium px-6 py-3 rounded-xl
+      transition-all duration-200 inline-flex items-center gap-2 border;
+    color: #88b5a1;
+    border-color: rgba(136, 181, 161, 0.35);
+    font-family: 'Syne', sans-serif;
+  }
+
+  .ghost-ember-btn:hover {
+    color: #a6cbbf;
+    border-color: rgba(136, 181, 161, 0.65);
+    background: rgba(136, 181, 161, 0.06);
+  }
+
+  .tech-tag {
+    @apply px-2.5 py-1 text-xs font-medium rounded-lg border;
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(136, 181, 161, 0.05);
+    border-color: rgba(136, 181, 161, 0.18);
+    color: hsl(var(--muted-foreground));
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  .dot-grid-ember {
+    background-image: radial-gradient(rgba(136, 181, 161, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest terminal-text;
+    color: #88b5a1;
+  }
+}
+
+/* ── Network graph node float animations ─────────────────────── */
+@keyframes nf1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(2px, -4px); }
+}
+@keyframes nf2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-3px, -2px); }
+  66% { transform: translate(2px, 3px); }
+}
+@keyframes nf3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3px, 4px); }
+}
+@keyframes nf4 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, -5px); }
+}
+@keyframes nf5 {
+  0%, 100% { transform: translate(0, 0); }
+  40% { transform: translate(4px, -2px); }
+  70% { transform: translate(-1px, 3px); }
+}
+@keyframes nf6 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 4px); }
+}
+
+.node-float-0 { animation: nf1 4.2s ease-in-out infinite; }
+.node-float-1 { animation: nf2 5.6s ease-in-out infinite 0.4s; }
+.node-float-2 { animation: nf3 3.9s ease-in-out infinite 1.1s; }
+.node-float-3 { animation: nf4 6.1s ease-in-out infinite 0.7s; }
+.node-float-4 { animation: nf5 4.8s ease-in-out infinite 0.2s; }
+.node-float-5 { animation: nf6 5.3s ease-in-out infinite 1.5s; }
+
+/* ── Terminal cursor blink ────────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* ── Sage glow pulse ──────────────────────────────────────────── */
+@keyframes ember-glow {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+.animate-ember-glow {
+  animation: ember-glow 2s ease-in-out infinite;
+}
+
+/* ── Smooth scroll snap for experience sections ───────────────── */
+@keyframes accordion-down {
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
 }

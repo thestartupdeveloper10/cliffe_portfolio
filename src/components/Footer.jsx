@@ -1,129 +1,179 @@
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, ExternalLink, ArrowUp } from "lucide-react";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
+const SOCIAL = [
+  { label: "GitHub",     icon: <Github className="w-5 h-5" />,           href: "https://github.com/thestartupdeveloper10" },
+  { label: "LinkedIn",   icon: <Linkedin className="w-5 h-5" />,         href: "https://www.linkedin.com/in/cliffe-ibande-2973b2261/" },
+  { label: "Twitter / X",icon: <FaSquareXTwitter className="w-5 h-5" />, href: "https://x.com/_startup_Dev" },
+  { label: "Email",      icon: <Mail className="w-5 h-5" />,              href: "mailto:owinocliffe10@gmail.com" },
+];
+
+const NAV_LINKS = [
+  { label: "Home",           id: "home" },
+  { label: "About",          id: "about" },
+  { label: "Skills",         id: "skills" },
+  { label: "Projects",       id: "projects" },
+  { label: "Experience",     id: "experience" },
+  { label: "Certifications", id: "certifications" },
+  { label: "Contact",        id: "contact" },
+];
+
+const LIVE_PROJECTS = [
+  { label: "The Board FC",  href: "https://theboardfc-uiff8.kinsta.page" },
+  { label: "Label Safi",    href: "https://labalsafike.onrender.com/" },
+  { label: "Royal Watches", href: "https://royalwatcheske.onrender.com/" },
+];
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: <Github className="w-5 h-5" />,
-      url: "https://github.com/thestartupdeveloper10"
-    },
-    {
-      name: "LinkedIn",
-      icon: <Linkedin className="w-5 h-5" />,
-      url: "https://www.linkedin.com/in/cliffe-ibande-2973b2261/"
-    },
-    {
-      name: "Email",
-      icon: <Mail className="w-5 h-5" />,
-      url: "mailto:owinocliffe10@gmail.com"
-    }
-  ];
-
-  const navigationLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" }
-  ];
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-black">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand Section */}
+    <footer
+      className="relative border-t"
+      style={{ background: "var(--bg-page)", borderColor: "rgba(136,181,161,0.08)" }}
+    >
+      {/* Top ember line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(136,181,161,0.4) 50%, transparent)",
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto section-padding py-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+          {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-white" id="home">Cliffe Ibande</h3>
-            <p className="text-gray-400 text-sm max-w-md">
-              Full-stack developer specializing in creating innovative web solutions 
-              and intelligent applications.
+            <div>
+              <h3
+                className="font-bold text-xl text-foreground"
+                style={{ fontFamily: "Syne, sans-serif" }}
+              >
+                Cliffe Owino Ibande
+              </h3>
+              <p className="text-sm mt-0.5 font-medium terminal-text" style={{ color: "#88b5a1" }}>
+                Associate Software Engineer
+              </p>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+              Building reliable, scalable systems — from M-Pesa fintech infrastructure
+              to AI-driven applications.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <Button
-                  key={social.name}
-                  variant="ghost"
-                  size="icon"
-                  asChild
-                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+            <div className="flex items-center gap-3 pt-1">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="p-2 rounded-lg text-muted-foreground transition-all duration-200"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "#88b5a1";
+                    e.currentTarget.style.background = "rgba(136,181,161,0.08)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "";
+                    e.currentTarget.style.background = "";
+                  }}
                 >
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                </Button>
+                  {s.icon}
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
-            <nav className="flex flex-col space-y-2">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+            <h4
+              className="font-semibold text-sm uppercase tracking-widest mb-4 terminal-text"
+              style={{ color: "#88b5a1" }}
+            >
+              Navigation
+            </h4>
+            <nav className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollTo(link.id)}
+                  className="text-sm text-muted-foreground text-left transition-colors duration-200"
+                  style={{ fontFamily: "DM Sans, sans-serif" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "#88b5a1"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = ""; }}
                 >
-                  {link.name}
-                </a>
+                  {link.label}
+                </button>
               ))}
             </nav>
           </div>
 
-          {/* Latest Projects */}
+          {/* Live projects */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Latest Projects</h3>
-            <div className="space-y-2">
-              <a 
-                href="https://labalsafike.onrender.com/" 
-                className="group flex items-center text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <span>Labal Safi</span>
-                <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              <a 
-                href="https://royalwatcheske.onrender.com/" 
-                className="group flex items-center text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <span>Royal Watches</span>
-                <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              <a 
-                href="https://osasuna-fc.onrender.com/" 
-                className="group flex items-center text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <span>Osasuna FC</span>
-                <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
+            <h4
+              className="font-semibold text-sm uppercase tracking-widest mb-4 terminal-text"
+              style={{ color: "#88b5a1" }}
+            >
+              Live Projects
+            </h4>
+            <div className="space-y-2.5">
+              {LIVE_PROJECTS.map((p) => (
+                <a
+                  key={p.label}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between text-sm text-muted-foreground transition-colors py-1 border-b"
+                  style={{ borderColor: "rgba(136,181,161,0.1)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--text-primary)";
+                    e.currentTarget.style.borderColor = "rgba(136,181,161,0.28)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "";
+                    e.currentTarget.style.borderColor = "rgba(136,181,161,0.1)";
+                  }}
+                >
+                  <span>{p.label}</span>
+                  <ExternalLink
+                    className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: "#88b5a1" }}
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
-              © {currentYear} Cliffe ibande. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-4 text-sm text-gray-400">
-              <button className="hover:text-white transition-colors">
-                Privacy Policy
-              </button>
-              <span className="text-gray-600">•</span>
-              <button className="hover:text-white transition-colors">
-                Terms of Service
-              </button>
-            </div>
+        {/* Bottom bar */}
+        <div
+          className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderColor: "rgba(136,181,161,0.08)" }}
+        >
+          <p className="text-sm text-muted-foreground terminal-text">
+            © {year} Cliffe Owino Ibande. Built with React &amp; ❤️.
+          </p>
+          <div className="flex items-center gap-6">
+            <span className="text-xs text-muted-foreground terminal-text">
+              Nairobi, Kenya 🇰🇪
+            </span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors"
+              aria-label="Back to top"
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#88b5a1"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = ""; }}
+            >
+              <ArrowUp className="w-3.5 h-3.5" />
+              Back to top
+            </button>
           </div>
         </div>
       </div>

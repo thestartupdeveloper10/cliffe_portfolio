@@ -1,34 +1,42 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
-import Quote from "./components/Quote"
-import About from "./pages/About"
-import Contact from "./pages/Contact"
-import Experience from "./pages/Experience"
-import Landing from "./pages/Landing"
-import Projects from "./pages/Projects"
-import Services from "./pages/Services"
-import { useTheme } from '@/components/ThemeProvider';
+import { Routes, Route } from 'react-router-dom'
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Certifications from "./pages/Certifications";
+import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
+import Landing from "./pages/Landing";
+import Projects from "./pages/Projects";
+import ProjectCategory from "./pages/ProjectCategory";
+import Skills from "./pages/Skills";
 
-function App() {
-  const { isDarkMode } = useTheme();
-  
+function MainLayout() {
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
+    <div className="bg-background min-h-screen transition-colors duration-300">
       <Navbar />
-      <div className="bg-[#fafafa] dark:bg-[#161515]">
+      <main>
         <Landing />
         <About />
-        <div className="my-10 py-20 px-4 md:px-16 bg-white dark:bg-[#130d14] rounded-[80px] shadow-lg mb-28">
-          <Quote />
-          <Projects />
-          <Experience/>
-          <Services />
-          <Contact />
-        </div>
-        <Footer />
-      </div>
+        <Skills />
+        <Projects />
+        <Experience />
+        <Certifications />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
 
-export default App
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainLayout />} />
+      <Route path="/projects/:category" element={<ProjectCategory />} />
+    </Routes>
+  );
+}
+
+export default App;
