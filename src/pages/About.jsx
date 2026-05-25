@@ -3,7 +3,7 @@ import TiltedCard from "@/components/TiltedCard";
 import HeroIMG from "@/assets/imgs/hero.png";
 
 const highlights = [
-  { label: "Role", value: "Associate Software Engineer @ Prodapt Ltd", color: "#88b5a1" },
+  { label: "Role", value: "Software Engineer @ Prodapt Ltd", color: "#88b5a1" },
   { label: "Education", value: "BSc Software Engineering — Kisii University", color: "#a4bcd1" },
   { label: "Location", value: "Nairobi, Kenya", color: "#74bba4" },
   { label: "Focus", value: "DevOps · Full-Stack · AI/ML", color: "#a4bcd1" },
@@ -53,18 +53,18 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I&apos;m a results-driven engineer with a BSc in Software Engineering and hands-on
-              experience spanning DevOps, full-stack development, and AI/ML. Currently I support{" "}
+              I&apos;m a software engineer with a BSc in Software Engineering and hands-on
+              experience across DevOps, full-stack development, and AI/ML. Currently I support{" "}
               <span style={{ color: "#88b5a1" }} className="font-medium">
                 M-Pesa operations across 5 African nations
               </span>{" "}
-              at Prodapt Ltd, ensuring reliability of platforms that process over 1 million daily
+              at Prodapt Ltd, keeping platforms reliable that process over 1 million daily
               transactions.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed">
-              I&apos;m passionate about building scalable systems — from microservice deployments
-              orchestrated with Kubernetes and Terraform, to RAG pipelines powered by Hugging Face
-              Transformers. I thrive at the intersection of infrastructure and application code.
+              I build scalable systems — from microservice deployments orchestrated with Kubernetes
+              and Terraform, to RAG pipelines powered by Hugging Face Transformers. Infrastructure
+              and application code: I&apos;m comfortable in both.
             </p>
 
             {/* Key details */}
@@ -98,7 +98,7 @@ export default function About() {
                 {interests.map((interest) => (
                   <span
                     key={interest}
-                    className="px-3 py-1.5 text-sm rounded-full border transition-all duration-200 hover:border-[rgba(136,181,161,0.4)] text-muted-foreground"
+                    className="px-3 py-1.5 text-sm rounded-full border transition-colors duration-200 hover:border-[rgba(136,181,161,0.4)] text-muted-foreground"
                     style={{
                       background: "rgba(136,181,161,0.04)",
                       borderColor: "rgba(136,181,161,0.15)",

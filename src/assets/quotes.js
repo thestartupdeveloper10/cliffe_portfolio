@@ -1,22 +1,22 @@
 // src/data/quotes.js
 export const personalQuotes = [
-    "Passionate about crafting digital solutions that transform complex challenges into seamless experiences, combining innovation with technical excellence to build tomorrow's technology",
-    
-    "Dedicated full-stack developer with a vision for creating intuitive applications that bridge the gap between human needs and technological possibilities",
-    
-    "Merging the art of design with the precision of code, I create digital experiences that resonate with users and deliver lasting impact across platforms",
-    
-    "Leveraging the power of AI and machine learning to transform raw data into meaningful insights, while crafting intelligent solutions that adapt and evolve",
-    
-    "From concept to deployment, I thrive on bringing innovative ideas to life through clean code, intuitive design, and cutting-edge technology stack implementation",
-    
-    "Committed to pushing the boundaries of what's possible in web and mobile development, while ensuring every line of code contributes to a more efficient digital world",
-    
-    "Combining technical expertise with creative problem-solving to develop robust applications that not only meet current needs but anticipate future challenges",
-    
-    "Building bridges between data science and user experience, creating intelligent applications that make complex technologies accessible and meaningful",
-    
-    "Driven by the belief that great software is born from the perfect balance of innovative thinking, technical excellence, and user-centered design principles",
-    
-    "Transforming visions into reality through the seamless integration of front-end creativity and back-end reliability, powered by modern technology stacks"
+    "I work on infrastructure that processes a million M-Pesa transactions a day. When something breaks, someone in Mozambique or Tanzania can't pay for groceries. That keeps my standards high.",
+
+    "Full-stack means I own both ends of a problem. No blaming the other team.",
+
+    "Most of my best debugging sessions started at 2am. Not proud, but the logs don't lie.",
+
+    "I build things in Africa for Africa. Latency, connectivity constraints, and cost-per-request matter more here than most tutorials admit.",
+
+    "The gap between a demo and production is where most engineers learn humility.",
+
+    "DevOps taught me that infrastructure is just code with more ways to fail silently.",
+
+    "I've shipped apps in React Native, deployed Kubernetes clusters on Huawei Cloud, and written RAG pipelines from scratch. I still Google how to center a div.",
+
+    "Fintech pays attention to uptime in a way that makes you careful. 99.9% sounds good until you do the math on how many transactions that 0.1% covers.",
+
+    "Every codebase I've inherited has taught me something the previous engineer didn't document.",
+
+    "I don't pick technologies because they're trending. I pick them because they solve the problem and I can debug them at midnight.",
   ];

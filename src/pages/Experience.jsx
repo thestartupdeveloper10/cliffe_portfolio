@@ -6,7 +6,7 @@ const EXPERIENCES = [
     id: 1,
     bgWord: "PRODAPT",
     company: "Prodapt Ltd",
-    role: "Associate Software Engineer",
+    role: "Software Engineer",
     period: "Sep 2025 — Present",
     isCurrent: true,
     accentHex: "#88b5a1",
@@ -32,7 +32,7 @@ const EXPERIENCES = [
     accentHex: "#a4bcd1",
     bgVar: "var(--bg-page-alt)",
     description:
-      "Delivered bespoke software solutions and IT consulting for diverse industry clients across Kenya.",
+      "Software development and IT consulting for clients across Kenya.",
     achievements: [
       "Integrated microservices, Docker, and Kubernetes deployments across 10+ client projects",
       "Built high-availability systems with NGINX reverse proxies achieving 99% availability",
@@ -51,12 +51,12 @@ const EXPERIENCES = [
     accentHex: "#a4bcd1",
     bgVar: "var(--bg-page)",
     description:
-      "Industrial attachment focused on data analytics, network monitoring, and cloud exposure at Huawei's Kenya operations.",
+      "Data analytics, network monitoring, and cloud exposure at Huawei Kenya.",
     achievements: [
       "Designed and refined data models for efficient network data management",
-      "Built interactive dashboards with Python and Excel for strategic decision-making",
-      "Generated advanced network monitoring reports and performance insights",
-      "Gained hands-on exposure to cloud architecture, virtualisation, and distributed systems",
+      "Built interactive dashboards with Python and Excel for network performance reporting",
+      "Generated network monitoring reports and flagged performance anomalies",
+      "Worked hands-on with cloud architecture, virtualisation, and distributed systems",
     ],
     tags: ["Python", "SPSS", "Excel", "Data Analysis", "Huawei Cloud"],
   },

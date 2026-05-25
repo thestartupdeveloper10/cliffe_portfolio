@@ -31,10 +31,11 @@ import {
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {project.images.gallery.map((image, index) => (
               <div key={index} className="overflow-hidden rounded-lg aspect-square">
-                <img 
-                  className="object-contain w-full h-full transition-transform duration-300 hover:scale-105" 
-                  src={image} 
+                <img
+                  className="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+                  src={image}
                   alt={`${project.title} - Image ${index + 1}`}
+                  style={{ outline: "1px solid rgba(0,0,0,0.08)" }}
                 />
               </div>
             ))}

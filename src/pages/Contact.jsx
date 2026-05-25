@@ -131,8 +131,7 @@ export default function Contact() {
             className="lg:col-span-2 space-y-5"
           >
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Whether you have a project in mind, a role to fill, or just want to discuss
-              engineering challenges — my inbox is always open.
+              Have a project, a role, or a technical question — send it through.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -142,7 +141,7 @@ export default function Contact() {
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 group"
+                  className="flex items-start gap-4 p-4 rounded-xl border transition-colors duration-200 group"
                   style={{ background: "var(--bg-card)", borderColor: "rgba(136,181,161,0.1)" }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = "rgba(136,181,161,0.28)";
@@ -344,7 +343,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{
                       background: "#88b5a1",
                       color: "#0d1a14",

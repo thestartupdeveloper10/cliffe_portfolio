@@ -96,6 +96,10 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', system-ui, sans-serif;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }
 
@@ -143,7 +147,7 @@ body::after {
   }
 
   .obsidian-card {
-    @apply rounded-2xl border transition-all duration-300;
+    @apply rounded-2xl border transition-colors duration-300;
     background: var(--bg-card);
     border-color: rgba(136, 181, 161, 0.12);
   }
@@ -155,17 +159,19 @@ body::after {
 
   .ember-btn {
     @apply bg-[#88b5a1] hover:bg-[#a6cbbf] text-[#0d1a14] font-semibold px-6 py-3 rounded-xl
-      transition-all duration-200 inline-flex items-center gap-2;
+      transition-colors duration-200 inline-flex items-center gap-2 active:scale-[0.96];
     font-family: 'Syne', sans-serif;
     letter-spacing: 0.02em;
+    transition-property: color, background-color, border-color, scale;
   }
 
   .ghost-ember-btn {
     @apply font-medium px-6 py-3 rounded-xl
-      transition-all duration-200 inline-flex items-center gap-2 border;
+      inline-flex items-center gap-2 border active:scale-[0.96];
     color: #88b5a1;
     border-color: rgba(136, 181, 161, 0.35);
     font-family: 'Syne', sans-serif;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s, scale 0.2s;
   }
 
   .ghost-ember-btn:hover {

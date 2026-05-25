@@ -68,10 +68,15 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md border-b shadow-lg shadow-black/10" : ""
-      }`}
-      style={isScrolled ? { background: "var(--nav-bg)", borderColor: "rgba(136,181,161,0.08)" } : {}}
+      className="fixed top-0 w-full z-50 border-b"
+      style={{
+        background: isScrolled ? "var(--nav-bg)" : "transparent",
+        borderColor: isScrolled ? "rgba(136,181,161,0.08)" : "transparent",
+        backdropFilter: isScrolled && !isOpen ? "blur(12px)" : "none",
+        WebkitBackdropFilter: isScrolled && !isOpen ? "blur(12px)" : "none",
+        boxShadow: isScrolled && !isOpen ? "0 4px 24px rgba(0,0,0,0.08)" : "none",
+        transition: "background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
+      }}
     >
       <div className="max-w-6xl mx-auto section-padding">
         <div className="flex items-center justify-between h-16 py-3">
@@ -91,7 +96,7 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`relative px-3 py-2 rounded-lg text-sm transition-all duration-200 font-display ${
+                className={`relative px-3 py-2 rounded-lg text-sm transition-colors duration-200 font-display ${
                   active === item.id
                     ? "text-[#88b5a1]"
                     : "text-muted-foreground hover:text-foreground"
@@ -111,13 +116,13 @@ export default function Navbar() {
 
             {/* Theme toggle */}
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
               onClick={toggle}
-              className="ml-1 p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="ml-1 p-3 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Toggle theme"
             >
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 {isDark ? (
                   <motion.div
                     key="sun"
@@ -145,7 +150,7 @@ export default function Navbar() {
             {/* CTA */}
             <button
               onClick={() => scrollTo("contact")}
-              className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold border transition-all duration-200"
+              className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold border transition-colors duration-200"
               style={{
                 fontFamily: "Syne, sans-serif",
                 borderColor: "rgba(136,181,161,0.4)",
@@ -167,13 +172,13 @@ export default function Navbar() {
           {/* Mobile: theme toggle + hamburger */}
           <div className="md:hidden flex items-center gap-1">
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
               onClick={toggle}
-              className="relative z-50 p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="relative z-50 p-3 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Toggle theme"
             >
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 {isDark ? (
                   <motion.div key="sun-m" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
                     <Sun className="w-4 h-4" />
@@ -187,11 +192,11 @@ export default function Navbar() {
             </motion.button>
 
             <button
-              className="relative z-50 p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="relative z-50 p-2.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 {isOpen ? (
                   <motion.div key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
                     <X className="w-5 h-5" />
@@ -228,7 +233,7 @@ export default function Navbar() {
                   key={item.id}
                   variants={itemVariants}
                   onClick={() => scrollTo(item.id)}
-                  className={`w-64 text-center px-6 py-4 rounded-xl text-2xl font-bold transition-all duration-200 ${
+                  className={`w-64 text-center px-6 py-4 rounded-xl text-2xl font-bold transition-colors duration-200 ${
                     active === item.id
                       ? "text-[#88b5a1] bg-[rgba(136,181,161,0.08)]"
                       : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"

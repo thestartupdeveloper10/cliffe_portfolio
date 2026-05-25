@@ -75,7 +75,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="p-2 rounded-lg text-muted-foreground transition-all duration-200"
+                  className="p-2.5 rounded-lg text-muted-foreground transition-colors duration-200"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = "#88b5a1";
                     e.currentTarget.style.background = "rgba(136,181,161,0.08)";
@@ -158,7 +158,7 @@ export default function Footer() {
           style={{ borderColor: "rgba(136,181,161,0.08)" }}
         >
           <p className="text-sm text-muted-foreground terminal-text">
-            © {year} Cliffe Owino Ibande. Built with React &amp; ❤️.
+            © {year} Cliffe Owino Ibande.
           </p>
           <div className="flex items-center gap-6">
             <span className="text-xs text-muted-foreground terminal-text">

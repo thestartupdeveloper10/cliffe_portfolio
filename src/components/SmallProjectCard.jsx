@@ -21,10 +21,11 @@ export default function SmallProjectCard({ project }) {
       </CardHeader>
       <CardContent>
         <div className="mb-4 overflow-hidden rounded-lg aspect-video">
-          <img 
-            className="object-contain w-full h-full transition-transform duration-300 hover:scale-105" 
-            src={project.images.gallery[0]} 
+          <img
+            className="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+            src={project.images.gallery[0]}
             alt={project.title}
+            style={{ outline: "1px solid rgba(0,0,0,0.08)" }}
           />
         </div>
         <p className="text-sm text-gray-600 line-clamp-3">

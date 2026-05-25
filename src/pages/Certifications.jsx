@@ -12,7 +12,7 @@ const CERTS = [
     accentHex: "#dcf4ff",
     verifyUrl: "https://coursera.org/verify/TUQFDODE6BEQ",
     description:
-      "Deep dive into LLM architectures, training data preparation, tokenisation, and prompt engineering fundamentals — authorised by IBM.",
+      "LLM architectures, training data preparation, tokenisation, and prompt engineering — authorised by IBM.",
   },
   {
     id: 2,
@@ -138,7 +138,7 @@ function FeaturedCard({ cert, index }) {
             href={cert.verifyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-200 shrink-0 self-start md:self-center"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border transition-colors duration-200 shrink-0 self-start md:self-center"
             style={{
               borderColor: `${cert.accentHex}40`,
               color: cert.accentHex,
@@ -169,7 +169,7 @@ function CertCard({ cert, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="rounded-2xl border p-5 flex flex-col gap-3 transition-all duration-300"
+      className="rounded-2xl border p-5 flex flex-col gap-3 transition-colors duration-300"
       style={{ background: "var(--bg-card)", borderColor: `${cert.accentHex}18` }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = `${cert.accentHex}40`;
@@ -238,8 +238,7 @@ export default function Certifications() {
             <span className="spark-text">Courses</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl text-sm leading-relaxed">
-            Continuously levelling up across cloud, DevOps, and AI/ML — verified credentials
-            from industry-leading organisations.
+            Credentials across cloud, DevOps, and AI/ML.
           </p>
         </motion.div>
 

@@ -13,7 +13,7 @@ const BOOT_LINES = [
   { text: "[████████████████████████████████] 100%", type: "prog" },
   { text: "> Identity resolved", type: "ok" },
   { text: "  name       CLIFFE OWINO IBANDE", type: "data" },
-  { text: "  role       Associate Software Engineer", type: "data" },
+  { text: "  role       Software Engineer", type: "data" },
   { text: "  company    Prodapt Ltd", type: "data" },
   { text: "  location   Nairobi, Kenya 🇰🇪", type: "data" },
   { text: "  status     ● ONLINE", type: "status" },
@@ -35,7 +35,7 @@ const LINE_STYLE = {
 };
 
 const ROLES = [
-  "Associate Software Engineer",
+  "Software Engineer",
   "DevOps & Cloud Engineer",
   "Full-Stack Developer",
   "AI / ML Engineer",
@@ -55,7 +55,7 @@ const CARD_LINES = [
   { text: "",         delay: 80,   type: "gap"  },
   { text: "$ cat profile.json", delay: 120, type: "cmd" },
   { text: "{",                  delay: 180, type: "data" },
-  { text: '  "role":     "Assoc. Software Engineer",', delay: 100, type: "data" },
+  { text: '  "role":     "Software Engineer",', delay: 100, type: "data" },
   { text: '  "company":  "Prodapt Ltd",',              delay: 90,  type: "data" },
   { text: '  "base":     "Nairobi, Kenya 🇰🇪",',       delay: 90,  type: "data" },
   { text: '  "stack":    "Full-Stack · DevOps · AI",', delay: 90,  type: "data" },
@@ -86,10 +86,11 @@ function AnimatedRole() {
 
   return (
     <span
-      className="inline-block transition-all duration-300"
+      className="inline-block"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(8px)",
+        transition: "opacity 200ms ease-out, transform 200ms ease-out",
       }}
     >
       {ROLES[index]}
@@ -414,7 +415,7 @@ function TerminalBoot({ onSkip }) {
       className="absolute inset-0 flex items-center justify-center z-20 px-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 0.97, filter: "blur(4px)" }}
+      exit={{ opacity: 0, scale: 0.97, filter: "blur(4px)", transition: { duration: 0.25 } }}
       transition={{ duration: 0.4 }}
       onClick={onSkip}
     >
@@ -603,7 +604,7 @@ export default function Landing() {
                       }
                     >
                       <span
-                        className="font-bold text-3xl sm:text-4xl ember-text block"
+                        className="font-bold text-3xl sm:text-4xl ember-text block tabular-nums"
                         style={{ fontFamily: "Syne, sans-serif" }}
                       >
                         {stat.value}

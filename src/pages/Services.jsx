@@ -9,19 +9,19 @@ const services = [
   {
     id: 1,
     title: 'Fullstack Web Development',
-    description: 'Building responsive and scalable web applications using modern technologies like React, Node.js, and cloud services. Specializing in creating seamless user experiences with robust backend solutions.',
+    description: 'React and Node.js web apps, from UI to API to deployment. I handle both ends of the stack.',
     icon: <CgWebsite size={120} className="text-indigo-600" />
   },
   {
     id: 2,
     title: 'Fullstack Mobile Development',
-    description: 'Developing cross-platform mobile applications using React Native. Crafting native-like experiences with efficient backend integration, offline-first capabilities and scalable applications that grow with user demands.',
+    description: 'Cross-platform React Native apps with real backends. Offline-first where the network can\'t be trusted.',
     icon: <CiMobile3 size={120} className="text-indigo-600" />
   },
   {
     id: 3,
     title: 'ML and Data Analysis',
-    description: 'Implementing machine learning solutions and data analytics pipelines. Specializing in predictive modeling, data visualization, and extracting actionable insights from complex datasets.',
+    description: 'ML pipelines, RAG systems, and data dashboards. Focused on models that ship, not just notebooks that run.',
     icon: <IoMdAnalytics size={120} className="text-indigo-600" />
   },
 ];
@@ -31,7 +31,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3
+      staggerChildren: 0.07
     }
   }
 };
@@ -57,7 +57,7 @@ export default function Services() {
     Services
   </h2>
   <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-    Leveraging cutting-edge technologies to deliver comprehensive solutions across web, mobile, and data science domains.
+    Web, mobile, and ML work — built to production standards.
   </p>
 </motion.div>
 

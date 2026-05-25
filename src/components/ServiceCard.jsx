@@ -24,17 +24,17 @@ const cardVariants = {
 };
 
 const iconVariants = {
-  hidden: { 
-    scale: 0,
+  hidden: {
+    scale: 0.85,
     opacity: 0
   },
-  visible: { 
+  visible: {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.25,
       ease: "easeOut",
-      delay: 0.2
+      delay: 0.1
     }
   }
 };

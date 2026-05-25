@@ -12,15 +12,15 @@ const containerVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     }
   },
   exit: {
     opacity: 0,
     transition: {
       when: "afterChildren",
-      staggerChildren: 0.05,
+      staggerChildren: 0.03,
       staggerDirection: -1
     }
   }
@@ -106,16 +106,16 @@ export default function Quote() {
             </div>
       
       <motion.div
-      initial={{ scale: 0 }}
-      whileInView={{scale: 1, transition: { duration: 0.6, ease: "easeOut" } }}
-      viewport={{ once: true }}
+        initial={{ scale: 0.85, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } }}
+        viewport={{ once: true }}
         className="text-blue-600 dark:text-blue-400"
       >
         <ImQuotesLeft size={50} />
       </motion.div>
 
       <div className="w-full max-w-4xl mx-auto">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentQuote}
             variants={containerVariants}
@@ -134,13 +134,9 @@ export default function Quote() {
       </div>
 
       <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ 
-          type: "spring",
-          stiffness: 260,
-          damping: 20 
-        }}
+        initial={{ scale: 0.85, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="text-blue-600 dark:text-blue-400"
       >
         <ImQuotesRight size={50} />
