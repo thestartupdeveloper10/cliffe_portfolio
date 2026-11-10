@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cliffe Owino Ibande — CV</title>
+<!--
+  ───────────────────────────────────────────────────────────────────────────
+  CV SOURCE. Edit this file, then run ./build.sh to regenerate the PDF the
+  portfolio serves at src/assets/cv/Cliffe_Owino_Ibande_CV.pdf.
+
+  Rules this document follows, same as the site:
+   · Single column, real text, standard section headings — so an applicant
+     tracking system can parse it. No layout tables, no text in images.
+   · Employment metrics stay (they have a team and a system behind them).
+     Unverifiable project metrics were cut: "95% recall on test queries",
+     "90% coherence", "85% user satisfaction in beta", "35% engagement in
+     simulations", "20% improved recommendation accuracy", "25% faster page
+     loads", "40% faster deployments", "20% cost reduction in test scenarios".
+     The first question an interviewer asks is how you measured coherence.
+   · Projects cut from thirteen to four. A reviewer judges you on the weakest
+     thing you chose to show. The practice projects (NGINX SSL automation,
+     Linux microservice monitor, Huawei cloud scripts, SmartDoc, ConversaAssist,
+     SkillUp, JamiiBudget, Motimarket) are gone.
+   · Current names only. Shutter Spot became PichaKonnect and Label Safi became
+     Kicksawa; an older CV still circulating carries the old names.
+  ───────────────────────────────────────────────────────────────────────────
+-->
+<style>
+  /* Palette borrowed from the portfolio's paper surface, on white so it
+     prints cleanly. */
+  :root {
+    --ink:    #16181C;
+    --dim:    #5A6068;
+    --line:   rgba(22, 24, 28, 0.16);
+    --accent: #0C6B3E;
+  }
+
+  @page { size: A4; margin: 11mm 12mm 10mm; }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 9.1pt;
+    line-height: 1.36;
+    color: var(--ink);
+    background: #fff;
+  }
+
+  /* ── Masthead ───────────────────────────────────────────────────────── */
+  .name {
+    margin: 0;
+    font-size: 23pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .title {
+    margin: 4pt 0 0;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+  }
+  .contact {
+    margin: 6pt 0 0;
+    font-size: 8.8pt;
+    color: var(--dim);
+  }
+  .contact a { color: var(--dim); text-decoration: none; }
+  .contact span.sep { padding: 0 3pt; opacity: 0.5; }
+
+  .masthead { padding-bottom: 8pt; border-bottom: 1.6pt solid var(--ink); }
+
+  /* ── Sections ───────────────────────────────────────────────────────── */
+  h2 {
+    margin: 10pt 0 5pt;
+    padding-bottom: 2.5pt;
+    border-bottom: 0.6pt solid var(--line);
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    break-after: avoid;
+  }
+
+  .summary { margin: 6pt 0 0; }
+
+  /* ── Entries ────────────────────────────────────────────────────────── */
+  .entry { margin-top: 7pt; break-inside: avoid; }
+  .entry:first-of-type { margin-top: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10pt;
+  }
+  .role { margin: 0; font-size: 10.2pt; font-weight: 700; }
+  .org  { font-weight: 400; color: var(--dim); }
+  .when {
+    flex-shrink: 0;
+    font-size: 8.6pt;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .context { margin: 2.5pt 0 0; font-size: 8.9pt; color: var(--dim); }
+  .stack   { margin: 2.5pt 0 0; font-size: 8.6pt; color: var(--dim); }
+
+  /* ── Bullets ────────────────────────────────────────────────────────── */
+  ul { margin: 5pt 0 0; padding-left: 11pt; }
+  li { margin-bottom: 2.1pt; }
+  li::marker { color: var(--accent); }
+
+  .subhead {
+    margin: 6pt 0 0;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+  }
+
+  b, strong { font-weight: 700; }
+  .lead { font-weight: 700; }
+  .note { color: var(--dim); font-weight: 400; }
+
+  /* ── Compact rows (skills, certifications) ──────────────────────────── */
+  .row {
+    display: flex;
+    gap: 8pt;
+    margin-bottom: 3pt;
+    break-inside: avoid;
+  }
+  .row .key {
+    flex: 0 0 86pt;
+    font-size: 7.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--dim);
+    padding-top: 0.6pt;
+  }
+  .row .val { flex: 1; }
+
+  a.plain { color: var(--ink); text-decoration: none; }
+  .url { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <h1 class="name">Cliffe Owino Ibande</h1>
+    <p class="title">Software Engineer · Backend &amp; AI Platforms</p>
+    <p class="contact">
+      Nairobi, Kenya
+      <span class="sep">·</span>+254 790 382 913
+      <span class="sep">·</span><a href="mailto:owinocliffe10@gmail.com">owinocliffe10@gmail.com</a>
+      <br />
+      <a href="https://cliffe-ibande.onrender.com/">cliffe-ibande.onrender.com</a>
+      <span class="sep">·</span><a href="https://github.com/thestartupdeveloper10">github.com/thestartupdeveloper10</a>
+      <span class="sep">·</span><a href="https://www.linkedin.com/in/cliffe-ibande-2973b2261/">linkedin.com/in/cliffe-ibande</a>
+    </p>
+  </header>
+
+  <p class="summary">
+    Software engineer building retrieval-augmented AI platforms and full-stack products on the M-Pesa
+    payments network. I have shipped four internal platforms for the engineering and support teams behind M-Pesa across five African
+ markets, and four live products of my own, one of them moving real money over M-Pesa. Strongest in Python and
+ FastAPI backends, and in retrieval that has to stay grounded in its sources. Looking for product engineering
+ work, backend or full-stack, remote.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Software Engineer, Core Payment Services <span class="org">— Prodapt Ltd</span></p>
+      <span class="when">Sep 2025 – Present</span>
+    </div>
+    <p class="context">
+      M-Pesa Africa across Tanzania, Ghana, Mozambique, Lesotho and the DR Congo, under Prodapt’s
+      partnership with Vodacom. Platforms serving millions of users at 1M+ transactions a day.
+    </p>
+
+    <p class="subhead">Platforms built</p>
+    <ul>
+      <li>
+        <span class="lead">FintechHub</span> <span class="note">— learning platform and knowledge
+        assistant for a mobile-money platform upgrade; working MVP.</span>
+        Ingests vendor help archives, PDF, Word and PowerPoint into Milvus and a MySQL knowledge graph, inside a
+        sandbox. Two reviewers sign off each module before it publishes, and learners earn reproducible PDF
+        certificates a third party can verify. The assistant streams cited answers over SSE, reranks them and
+        checks them for faithfulness; a release ships only if it clears recall@12 against a golden question set.
+        <b>1,100+ backend tests at ~91% coverage, 670+ frontend.</b>
+      </li>
+      <li>
+        <span class="lead">RCA Pulsar</span> <span class="note">— retrieval-augmented root cause
+        analysis for M-Pesa problem management; team project.</span>
+        Fuses dense vectors with BM25 so exact error codes, ticket IDs and hostnames still rank. Four grounding
+        checks run in order, and the system declines rather than invent a cause it cannot ground. Approved
+        analyses move through a maker-checker state machine where no one approves a document they wrote, and
+        approval re-indexes it so it informs later answers.
+        <b>1,570 backend tests.</b>
+      </li>
+      <li>
+        <span class="lead">AI LMS</span> <span class="note">— turns a support team’s SOPs into
+        courses and assessments; team project.</span>
+        Generates courses with LangChain and checks that each question can be answered from its own lesson. An
+        hourly job confirms a changed SOP across several runs, then regenerates the lesson into staging for the
+        owner to review. Assessments shuffle from a fixed seed, so I can rebuild any paper later, and a
+        reversible PII vault keeps real hostnames, IPs and phone numbers away from the model.
+        <b>1,600+ backend tests, 185+ frontend.</b>
+      </li>
+      <li>
+        <span class="lead">OpsHub</span> <span class="note">— the hub running the CPS support team’s
+        on-call, rotas, incidents and planned changes.</span>
+        Drafts the daily rota from fairness rules for a team lead to review, approve and publish. The incident
+        assistant combines BM25 and vector search over SOPs and ticket history to return cited triage steps and
+        a draft worklog, masking phone numbers, emails, IPs and hostnames before anything leaves for the model.
+        <b>500+ backend tests, permission coverage on every route.</b>
+      </li>
+    </ul>
+
+    <p class="subhead">Platform operations</p>
+    <ul>
+      <li>Operate large-scale Linux production servers carrying M-Pesa core payment infrastructure at over 1M daily transactions</li>
+      <li>Monitor, tune and optimise queries on high-volume transactional databases, <b>cutting latency 15%</b></li>
+      <li>Automate recurring operational work in Python and Bash, <b>cutting manual errors 30%</b></li>
+      <li>Create, renew and deploy the certificates securing service-to-service traffic, <b>sustaining 99.9% uptime</b></li>
+      <li>Provision VMs across distributed infrastructure on VMware and Kubernetes, and watch system health and SLA
+compliance in Grafana; handle incidents, restore service and run root-cause analysis with other teams</li>
+      <li>Contribute to TZ Fintech 2.0, a cloud platform upgrade adding AI-driven fraud detection and transaction capacity</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Backend Web Developer <span class="org">— Techsavannah</span></p>
+      <span class="when">Sep 2024 – Jul 2025</span>
+    </div>
+    <p class="context">Bespoke software and IT consulting for clients across Kenya.</p>
+    <ul>
+      <li>Shipped microservice architectures, Dockerised applications and Kubernetes deployments <b>across 10+ client projects</b></li>
+      <li>Built high-availability systems with API gateways, reverse proxies and load balancing on NGINX, <b>at 99% availability</b></li>
+      <li>Implemented Linux server automation, scheduled jobs, monitoring dashboards and deployment pipelines in Jenkins and Terraform</li>
+      <li>Modernised legacy systems and optimised business processes alongside cross-functional teams</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Data Analyst, Industrial Attachment <span class="org">— Huawei Technologies (Kenya)</span></p>
+      <span class="when">Jun – Aug 2023</span>
+    </div>
+    <ul>
+      <li>Designed data models and maintained data cubes for network performance analytics</li>
+      <li>Built dashboards in Python and Excel, and produced network monitoring reports flagging performance anomalies</li>
+      <li>Analysed network performance trends in SPSS, Python and Excel; worked with cloud architecture, virtualisation and distributed systems</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">PichaKonnect <span class="org">— photography marketplace, live</span></p>
+      <span class="when">Mar 2024 – Present</span>
+    </div>
+    <p class="stack">
+      <a class="url" href="https://pichakonnect.live/">pichakonnect.live</a>
+      · React, Express, Prisma, PostgreSQL, Socket.IO, M-Pesa Daraja, Cloudinary
+    </p>
+    <ul>
+      <li>Two-sided marketplace for Kenya: clients book photographers, photographers manage availability and deliver paid galleries, and <b>real money moves between them over M-Pesa</b></li>
+      <li>Built M-Pesa Daraja STK push with a verified callback and a duplicate-prompt guard, over a ledger carrying
+payouts, refunds and disputes</li>
+      <li>Signed Cloudinary assets behind payment-gated galleries, Socket.IO chat, Google and Facebook sign-in, audit log on every admin action</li>
+      <li>81 backend tests and 155 commits; I wrote up three rounds of self-audit in the repository</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Shorts Pipeline <span class="org">— video tooling, local models</span></p>
+      <span class="when">Oct 2026 – Present</span>
+    </div>
+    <p class="stack">Python, faster-whisper, MediaPipe, OpenCV, FFmpeg, Pytest</p>
+    <ul>
+      <li>Command-line tool turning long-form interviews into captioned 9:16 video — transcription, clip selection, speaker-tracked reframing, captions and a voiced intro</li>
+      <li>Runs on local models end to end: faster-whisper for transcription, MediaPipe face detection and landmarks to keep the speaker in a recropped frame, scene detection for cut points</li>
+      <li>Every stage checkpoints its results, because a two-hour source takes three and a half hours and runs get
+interrupted; ~3,400 lines of Python, 13 test files</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Kicksawa <span class="org">— e-commerce, live</span></p>
+      <span class="when">Aug 2024 – Present</span>
+    </div>
+    <p class="stack">
+      <a class="url" href="https://kicksawa.store/">kicksawa.store</a>
+      · React, Redux Toolkit, Express, MongoDB, Firebase, Tailwind
+    </p>
+    <ul>
+      <li>Sneaker and streetwear store built as three packages — customer storefront, admin dashboard and REST API — still shipping after two years at 73 commits</li>
+      <li>Firebase authentication with JWT sessions; I hardened the backend with helmet and rate limiting, and built an
+admin dashboard reporting on orders and revenue</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">Royal Watches <span class="org">— e-commerce, live</span></p>
+      <span class="when">Jun 2024 – Jun 2026</span>
+    </div>
+    <p class="stack">
+      <a class="url" href="https://royalwatcheske.onrender.com/">royalwatcheske.onrender.com</a>
+      · React, Redux Toolkit, Express, MongoDB, Stripe, Paystack
+    </p>
+    <ul>
+      <li>Luxury watch storefront with a separate admin package, Stripe and Paystack payments, reviews and transactional email</li>
+      <li>Audited it end to end in 2026 and <b>fixed 20 backend issues</b>, documenting the findings, API reference and
+remaining work in the repository</li>
+    </ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+
+  <div class="row"><div class="key">Languages</div><div class="val">Python, TypeScript, JavaScript, Java, SQL, Bash</div></div>
+  <div class="row"><div class="key">Backend</div><div class="val">FastAPI, SQLAlchemy 2, Alembic, Celery, Express, Node.js, Spring Boot, Flask, Django, REST, gRPC</div></div>
+  <div class="row"><div class="key">Frontend</div><div class="val">React, TypeScript, Next.js, Vite, TanStack Query, Zustand, Redux Toolkit, Tailwind, Radix</div></div>
+  <div class="row"><div class="key">Retrieval</div><div class="val">Milvus, vector search, BM25 hybrid retrieval, LangChain, Azure OpenAI, Hugging Face, embeddings, RAG evaluation, PyTorch, scikit-learn</div></div>
+  <div class="row"><div class="key">Data</div><div class="val">MySQL, PostgreSQL, MongoDB, Redis, Prisma, Supabase, Pandas, NumPy</div></div>
+  <div class="row"><div class="key">Infrastructure</div><div class="val">Linux, Docker, Kubernetes, NGINX, Terraform, Ansible, Jenkins, GitHub Actions, VMware, Huawei Cloud, AWS, Azure, GCP</div></div>
+  <div class="row"><div class="key">Testing</div><div class="val">Pytest, Vitest, Jest, Playwright, Schemathesis · Grafana, Prometheus, Loki, ELK Stack</div></div>
+  <div class="row"><div class="key">Security</div><div class="val">Keycloak (OIDC), OAuth 2.0, JWT, role-based access control, PII masking and tokenisation</div></div>
+
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="role">BSc Software Engineering <span class="org">— Kisii University, Kenya</span></p>
+      <span class="when">2020 – Dec 2024</span>
+    </div>
+  </div>
+
+  <h2>Certifications</h2>
+
+  <div class="row">
+    <div class="val">
+      Generative AI and LLMs: Architecture and Data Preparation — IBM / Coursera, 2026
+      (<a class="url" href="https://coursera.org/verify/TUQFDODE6BEQ">coursera.org/verify/TUQFDODE6BEQ</a>)<br />
+      Docker Fundamentals, 2025 · Postman API Development, 2025 · SPSS for Data Analysis, 2024 ·
+      Huawei Cloud Fundamentals (HCIA), 2023
+    </div>
+  </div>
+
+</body>
+</html>

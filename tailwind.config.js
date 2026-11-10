@@ -1,116 +1,48 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
-  ],
-  prefix: "",
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: { "2xl": "1400px" },
-    },
     extend: {
       fontFamily: {
-        display: ['Syne', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'Consolas', 'monospace'],
-        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+        // Act I — deep ink
+        ink: {
+          DEFAULT: '#0A0C10',
+          raised: '#12151B',
+          card: '#171B22',
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        // Act II — warm paper
+        paper: {
+          DEFAULT: '#F4F1EA',
+          card: '#EAE6DC',
+          ink: '#16181C',
+          dim: '#5A6068',
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+        // Payment-state semantics
+        settled: {
+          DEFAULT: '#34C77B',
+          deep: '#0C6B3E',
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        sage: {
-          DEFAULT: '#88b5a1',
-          light: '#a6cbbf',
-          dark: '#6a9d8d',
-        },
-        steel: {
-          DEFAULT: '#a4bcd1',
-          light: '#c8daea',
-          dark: '#7a9cb8',
-        },
-        ice: {
-          DEFAULT: '#dcf4ff',
-          light: '#edfaff',
-          dark: '#b8d9f0',
-        },
-        forest: {
-          DEFAULT: '#384b42',
-          surface: '#122018',
-          card: '#192b20',
-          elevated: '#1c2f24',
-        },
+        pending: '#E8A33D',
+        failed: '#E5484D',
+        // Type on ink
+        cream: '#EDEAE3',
+        dim: '#9AA0A6',
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      maxWidth: {
+        measure: '34rem',   // ~68ch, the reading column
+        frame: '78rem',
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
+      letterSpacing: {
+        label: '0.16em',
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      fontSize: {
-        xs: ["12px", { lineHeight: "16px" }],
-        sm: ["14px", { lineHeight: "20px" }],
-        base: ["16px", { lineHeight: "24px" }],
-        lg: ["18px", { lineHeight: "28px" }],
-        xl: ["20px", { lineHeight: "28px" }],
-        "2xl": ["24px", { lineHeight: "32px" }],
-        "3xl": ["30px", { lineHeight: "36px" }],
-        "4xl": ["36px", { lineHeight: "40px" }],
-        "5xl": ["48px", { lineHeight: "1" }],
-        "6xl": ["60px", { lineHeight: "1" }],
-        "7xl": ["72px", { lineHeight: "1" }],
-        "8xl": ["96px", { lineHeight: "1" }],
-        "9xl": ["128px", { lineHeight: "1" }],
+      transitionTimingFunction: {
+        editorial: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 }

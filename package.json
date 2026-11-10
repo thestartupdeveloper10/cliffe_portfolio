@@ -1,7 +1,7 @@
 {
-  "name": "starter",
+  "name": "cliffe-ibande-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,19 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
     "framer-motion": "^11.11.11",
     "lucide-react": "^0.427.0",
-    "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^7.15.1",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "react-router-dom": "^7.15.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
